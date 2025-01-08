@@ -16,7 +16,7 @@ export default function MarkLine({
   type,
 }: Mark) {
   const [isOpen, setIsOpen] = useState(false);
-  const [parent, enableAnimations] = useAutoAnimate();
+  const [parent] = useAutoAnimate();
 
   const markTable: { [key: string]: number } = {
     "1": 1,

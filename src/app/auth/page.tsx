@@ -18,7 +18,7 @@ export default function Page() {
     setLoading(true);
     setError("");
     const response = await fetch(
-      `/api/getSessionToken?username=${credentials.username}&password=${credentials.password}`
+      `/api/getSessionToken?username=${encodeURIComponent(credentials.username)}&password=${encodeURIComponent(credentials.password)}`
     );
     if (response.ok) {
       const data = await response.json();

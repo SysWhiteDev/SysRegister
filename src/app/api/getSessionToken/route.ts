@@ -10,7 +10,7 @@ export async function GET(request: Request) {
         const username = searchParams.get("username") || "";
         const password = searchParams.get("password") || "";
 
-        const browser = await puppeteer.launch({ headless: true });
+        const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
 
         await page.goto("https://web.spaggiari.eu/home/app/default/login.php", { waitUntil: "domcontentloaded" });
